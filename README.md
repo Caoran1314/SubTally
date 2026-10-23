@@ -7,6 +7,15 @@
 没有账号、没有后端、不上传任何记录 —— 数据只存在你的浏览器里。
 
 <p align="center">
+  <a href="https://github.com/Caoran1314/subs/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Caoran1314/subs/actions/workflows/ci.yml/badge.svg" /></a>
+  <a href="https://hub.docker.com/r/caowenrui/subs"><img alt="Docker" src="https://img.shields.io/docker/v/caowenrui/subs?label=docker" /></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
+  <img alt="React" src="https://img.shields.io/badge/React-18-087ea4.svg" />
+  <img alt="Vite" src="https://img.shields.io/badge/Vite-6-646cff.svg" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5-3178c6.svg" />
+</p>
+
+<p align="center">
   <img src="docs/screenshots/2-overview.jpg" alt="总览" width="900" />
 </p>
 
@@ -105,6 +114,70 @@ git tag v1.0.0 && git push origin v1.0.0
 纯静态站点，不需要 WebSocket、不需要 TLS 终结。把 `https://subs.example.com` 反代到 `http://<host>:5273` 即可。
 
 ---
+
+## 使用方法
+
+### 第一次进入
+1. 打开页面 → 点「开始使用」→ 填一个昵称（只存在本地浏览器，随时可改）
+2. 进入总览。首次会给几条示例订阅，直接改成你自己的就行
+
+### 添加一条订阅
+1. 点「添加订阅」
+2. 在预设列表里搜（如 `ChatGPT`、`哔哩哔哩`），每个预设都带真实品牌图标；没收录的点最下面的「添加上方未包含的软件」
+3. 填金额、选币种（9 种）和周期（每月 / 每季 / 每年 / 一次性 / 买断）
+4. 选下次续费日、选分类，可选填一句备注
+5. 图标：预设自带；也可「从官网获取」或上传自己的图片
+6. 保存
+
+### 续费前做决定
+总览的「续订前再想一次」会在到期前出现（默认提前 7 天内，可改）：
+
+| 选择 | 效果 |
+| --- | --- |
+| **留下** | 标记为继续用，决定被记录 |
+| **放手** | 标记为停用，**不再计入月均**；统计页会算「放手一年省下多少」 |
+| **明天再问** | 保持待决定，下次打开还会问 |
+
+### 看清钱花在哪
+- **总览**：本月合计、构成条、未来 12 个月实际扣款分布、预算进度、到期日历
+- **全部订阅**：账本式列表，可排序、筛选、批量整理；右上角可切卡片视图
+- **统计**：周期结构、金额分布、最贵排行、费用快照表，可导出 CSV 或生成打印报告
+
+### 设置一个月预算
+设置 → 预算目标 → 填一个数字（汇总币种）。用超了总览会变红并在洞察里提示。
+
+### 汇率与币种
+默认用已缓存的汇率折算；点「联网更新」才会请求公开汇率接口（只发送币种代码）。
+
+### 备份与迁移
+设置 → **导出备份**（JSON）→ 换设备后 **导入备份**。
+> 数据只在本浏览器，清缓存 / 换浏览器就没了 —— 重要的话先导出。
+
+### 常见问题
+
+<details>
+<summary><b>数据存在哪？会上传吗？</b></summary>
+
+存在浏览器 `localStorage` 的 `subs.state.v1`，不上传。换设备请用导出/导入。
+</details>
+
+<details>
+<summary><b>会自己联网吗？</b></summary>
+
+只有两个请求，且都要你点按钮才触发：取汇率（Frankfurter，只发币种代码）、取官网图标（只发你填的域名）。页面还有 CSP 限制，其它域一律不允许。
+</details>
+
+<details>
+<summary><b>怎么部署到 NAS / 服务器？</b></summary>
+
+纯静态，一个容器就行，详见上面的 [Docker](#docker) 一节。放到 Nginx / Lucky / Caddy 后面反代到 5273 端口即可。
+</details>
+
+<details>
+<summary><b>为什么「月均」和「金额」不一样？</b></summary>
+
+「金额」是你实际付的（如 ¥138/年）；「月均」是折算到每月的（¥11.50/月），用来横向比较和合计。一次性与买断不计入月均。
+</details>
 
 ## 设计
 

@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Subs · 设计令牌
+   母题：刻度环。订阅的本质是周期 —— 一圈刻度，一个标出当前位置的点。
+   暖调、低饱和；背景是几圈缓慢转动的细环与一团暖光，
+   玻璃才有东西可透。数字用衬线，正文用无衬线。
+   ============================================================ */
+
+:root {
+  /* —— 深色（默认，夜里） —— */
+  --ink-950: 18 24% 6%;
+  --ink-900: 18 22% 8.5%;
+  --ink-850: 18 20% 11%;
+  --ink-800: 18 19% 13.5%;
+  --ink-700: 18 16% 19%;
+
+  --paper: 32 26% 95%;
+  --paper-soft: 28 15% 82%;
+  --paper-mute: 26 11% 63%;
+  --paper-faint: 26 9% 45%;
+
+  --line: 28 17% 21%;
+  --line-strong: 28 19% 31%;
+
+  --danger: 4 52% 62%;
+  --ok: 145 22% 58%;
+
+  /* 玻璃 */
+  --glass-bg: 20 20% 14%;
+  --glass-alpha: 0.52;
+  --glass-blur: 22px;
+
+  --vignette: 0.72;
+}
+
+[data-mode='light'] {
+  --ink-950: 34 32% 96%;
+  --ink-900: 34 30% 93.5%;
+  --ink-850: 34 26% 90%;
+  --ink-800: 32 22% 86%;
+  --ink-700: 30 18% 78%;
+
+  --paper: 22 24% 13%;
+  --paper-soft: 22 14% 26%;
+  --paper-mute: 24 10% 42%;
+  --paper-faint: 26 8% 56%;
+
+  --line: 28 20% 80%;
+  --line-strong: 28 22% 70%;
+
+  --danger: 4 58% 46%;
+  --ok: 145 28% 36%;
+
+  --glass-bg: 36 40% 99%;
+  --glass-alpha: 0.58;
+  --glass-blur: 20px;
+
+  --vignette: 0.16;
+}
+
+/* —— 强调色：藕粉 / 藤紫 / 秋香 / 灰绿 —— */
+[data-accent='rose'] {
+  --accent: 350 44% 74%;
+  --accent-soft: 350 44% 86%;
+  --accent-deep: 350 34% 40%;
+  --accent-glow: 350 66% 62%;
+}
+[data-accent='violet'] {
+  --accent: 274 26% 74%;
+  --accent-soft: 274 26% 86%;
+  --accent-deep: 274 20% 42%;
+  --accent-glow: 274 54% 64%;
+}
+[data-accent='qiuxiang'] {
+  --accent: 42 36% 67%;
+  --accent-soft: 42 38% 82%;
+  --accent-deep: 42 28% 36%;
+  --accent-glow: 42 58% 58%;
+}
+[data-accent='sage'] {
+  --accent: 136 15% 68%;
+  --accent-soft: 136 16% 84%;
+  --accent-deep: 136 12% 36%;
+  --accent-glow: 136 28% 58%;
+}
+
+[data-mode='light'][data-accent='rose'] {
+  --accent: 350 40% 58%;
+  --accent-deep: 350 40% 38%;
+}
+[data-mode='light'][data-accent='violet'] {
+  --accent: 274 26% 56%;
+  --accent-deep: 274 26% 38%;
+}
+[data-mode='light'][data-accent='qiuxiang'] {
+  --accent: 42 34% 48%;
+  --accent-deep: 42 34% 32%;
+}
+[data-mode='light'][data-accent='sage'] {
+  --accent: 136 18% 46%;
+  --accent-deep: 136 18% 32%;
+}
+
+* {
+  border-color: hsl(var(--line));
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(var(--ink-950));
+  color: hsl(var(--paper));
+  font-family: theme('fontFamily.sans');
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'tnum' 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: hsl(var(--accent) / 0.32);
+  color: hsl(var(--paper));
+}
+
+/* —— 滚动条：细、暖、不抢戏 —— */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--line-strong) / 0.7);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.55);
+  background-clip: content-box;
+}
+
+:focus-visible {
+  outline: 2px solid hsl(var(--accent) / 0.7);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ============================================================
+   组件层
+   ============================================================ */
+
+/* 刻度环的缓慢自转（背景装饰用） */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer components {
+  /* 玻璃：真的模糊后面的光。只用一圈发丝高光和一层柔光，不叠机械阴影。 */
+  .glass {
+    position: relative;
+    background: linear-gradient(
+      hsl(var(--glass-bg) / var(--glass-alpha)),
+      hsl(var(--glass-bg) / calc(var(--glass-alpha) * 0.72))
+    );
+    backdrop-filter: blur(var(--glass-blur)) saturate(1.18);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.18);
+    border: 1px solid hsl(var(--line) / 0.9);
+    box-shadow: theme('boxShadow.glass');
+  }
+
+  /* 发丝高光：沿上沿的一道极细亮线 */
+  .hairline::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--paper) / 0.34) 18%,
+      hsl(var(--paper) / 0.44) 50%,
+      hsl(var(--paper) / 0.34) 82%,
+      transparent
+    );
+    pointer-events: none;
+  }
+
+  /* 柔光：卡片背后那一层淡光 */
+  .softglow::after {
+    content: '';
+    position: absolute;
+    inset: -40% -10% auto -10%;
+    height: 90%;
+    background: radial-gradient(ellipse at 50% 0%, hsl(var(--accent-glow) / 0.16), transparent 70%);
+    filter: blur(28px);
+    pointer-events: none;
+    opacity: 0.85;
+  }
+
+  .serif {
+    font-family: theme('fontFamily.serif');
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: 0.01em;
+  }
+
+  /* 大数字：衬线 + 紧字距 + 一点点光 */
+  .numeral {
+    font-family: theme('fontFamily.serif');
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  .label-xs {
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: hsl(var(--paper-faint));
+    font-weight: 500;
+  }
+
+  .hint {
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: hsl(var(--paper-mute));
+  }
+
+  /* 分节之间的细分割：两侧渐隐 */
+  .ruled {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--line-strong)), transparent);
+  }
+
+  .tap {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* 尊重系统的"减少动态" */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+

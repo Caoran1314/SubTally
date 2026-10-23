@@ -1,0 +1,26 @@
+services:
+  subs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # 国内构建走镜像源；海外可改成 https://registry.npmjs.org
+        NPM_REGISTRY: https://registry.npmmirror.com
+    image: subs:1.0.0
+    container_name: subs
+    restart: unless-stopped
+    ports:
+      # 宿主机端口:容器端口（容器内非 root，监听 8080）
+      # 5273 被占用就改左边的数字
+      - "5273:8080"
+    environment:
+      - TZ=Asia/Shanghai
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    security_opt:
+      - no-new-privileges:true
+    # 纯静态、零状态：不需要数据卷、不需要数据库

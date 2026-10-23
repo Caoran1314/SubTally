@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#1a1210"/>
+  <!-- 刻度环：外环 + 一圈刻度 + 一个标出当前位置的点 -->
+  <circle cx="32" cy="34" r="20" stroke="#e8b4b8" stroke-width="2.2" opacity=".9"/>
+  <circle cx="32" cy="34" r="12.5" stroke="#e8b4b8" stroke-width="3"
+          stroke-dasharray="2.6 10.2" stroke-linecap="round" opacity=".95"/>
+  <circle cx="32" cy="14" r="4.2" fill="#e8b4b8"/>
+</svg>

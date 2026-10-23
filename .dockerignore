@@ -1,0 +1,14 @@
+node_modules
+dist
+.tmp
+.git
+.gitignore
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+shots
+ref
+README.md

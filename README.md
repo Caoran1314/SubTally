@@ -62,11 +62,11 @@ npm run typecheck  # 类型检查
 
 ## Docker
 
-镜像地址：`<dockerhub-user>/subs`（由 CI 自动构建推送，见下文）
+镜像地址：`caowenrui/subs`（由 CI 自动构建推送，见下文）
 
 ```bash
 docker run -d --name subs -p 5273:8080 --restart unless-stopped \
-  -e TZ=Asia/Shanghai <dockerhub-user>/subs:latest
+  -e TZ=Asia/Shanghai caowenrui/subs:latest
 ```
 
 打开 `http://<host>:5273`。
@@ -173,3 +173,4 @@ npm run dev
 ## 许可
 
 [MIT](LICENSE)
+

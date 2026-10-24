@@ -6,9 +6,23 @@
 
 **把订阅理清，把选择留给自己。**
 
-本地优先的订阅管理与续费决策应用。记下会员、创作者充电、AI 套餐，之后每月花了多少、花在哪、下一次要付什么，一眼看清；每次续费前它只问你一句「还要不要」，决定留给你自己。
+SubTally 有两种用法：**微信小程序扫码即用**，或 **Docker 自建网页版**。记下会员、创作者充电、AI 套餐，看清每月花费、分类构成和续费时间；数据默认只保存在本机，同步为可选项，云端只有密文。
 
-没有账号、没有后端、不上传任何记录 —— 数据只存在你的浏览器里。
+## 扫码体验
+
+| SubTally 体验版 | 拎包开拍 体验版 | 体验交流群 |
+| --- | --- | --- |
+| <img src="docs/subtally-trial-qr.png" width="220" alt="SubTally 体验版二维码" /> | <img src="docs/lingbao-trial-qr.png" width="220" alt="拎包开拍体验版二维码" /> | <img src="docs/wechat-group-qr.jpg" width="220" alt="体验交流群二维码" /> |
+
+> 二维码 2026-10-31 前有效。
+
+## 价格
+
+- **免费版**：最多 5 个订阅，纯本地，不需要账号。
+- **专业版**：12 元/年，激活码解锁无限订阅和多设备端到端加密同步。
+- **体验版**：2026-10-31 前免费开放；免费额度仍是 5 个订阅，测试无限订阅和同步需要激活码。
+
+网页版没有账号、没有后端，数据只存在浏览器；小程序的同步是可选项，云端只保存密文。
 
 <p align="center">
   <a href="https://github.com/Caoran1314/SubTally/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Caoran1314/SubTally/actions/workflows/ci.yml/badge.svg" /></a>
@@ -24,6 +38,8 @@
 </p>
 
 <p align="center">
+  <a href="#扫码体验">扫码体验</a> ·
+  <a href="#价格">价格</a> ·
   <a href="#功能">功能</a> ·
   <a href="#快速开始">快速开始</a> ·
   <a href="#docker">Docker</a> ·

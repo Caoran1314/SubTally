@@ -1,7 +1,7 @@
 {
   "name": "subtally",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "SubTally — 把订阅理清，把选择留给自己。本地优先的订阅管理与续费决策应用。",
   "scripts": {

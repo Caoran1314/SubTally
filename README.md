@@ -28,10 +28,12 @@ Docker 网页版没有账号、没有后端，数据只存在浏览器；小程�
 ## 小程序界面
 
 <p align="center">
-  <img src="docs/screenshots/mini-home.jpg" width="220" alt="小程序总览" />
-  <img src="docs/screenshots/mini-list.jpg" width="220" alt="订阅列表" />
-  <img src="docs/screenshots/mini-add.jpg" width="220" alt="添加订阅" />
-  <img src="docs/screenshots/mini-settings.jpg" width="220" alt="多设备同步" />
+  <img src="docs/screenshots/mini-home.jpg" width="260" alt="小程序总览" />
+  <img src="docs/screenshots/mini-list.jpg" width="260" alt="订阅列表" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/mini-add.jpg" width="260" alt="添加订阅" />
+  <img src="docs/screenshots/mini-settings.jpg" width="260" alt="多设备同步" />
 </p>
 
 <p align="center">

@@ -39,7 +39,6 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
-            type=sha,format=short
           labels: |
             org.opencontainers.image.title=SubTally
             org.opencontainers.image.description=SubTally — 把订阅理清，把选择留给自己。本地优先的订阅管理与续费决策应用

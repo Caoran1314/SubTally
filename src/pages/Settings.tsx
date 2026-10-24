@@ -358,7 +358,7 @@ export function SettingsPage() {
       </GlassCard>
 
       <p className="hint pb-2 text-center">
-        Subs v1.0 · 本地优先 · 不收集任何数据
+        SubTally v1.0 · 本地优先 · 不收集任何数据
       </p>
     </div>
   )

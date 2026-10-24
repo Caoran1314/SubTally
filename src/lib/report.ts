@@ -69,7 +69,7 @@ export function buildReportHtml({ subs, snapshots, decisions, settings, fx }: Re
   @media print{body{padding:0} .wrap{max-width:none} @page{margin:16mm}}
 </style></head>
 <body><div class="wrap">
-  <div class="sub">Subs · 本地订阅报告</div>
+  <div class="sub">SubTally · 本地订阅报告</div>
   <h1>把订阅与花费看清</h1>
   <div class="hero">
     <div class="big">${fmtMoney(monthly)}<small>每月折算</small></div>
@@ -164,7 +164,7 @@ export function buildReportHtml({ subs, snapshots, decisions, settings, fx }: Re
   <div class="foot">
     此文件由浏览器在本机生成，不连接外部服务。可用浏览器打印功能保存为 PDF。<br>
     参考汇率：${rateLines.length ? esc(rateLines.slice(0, 4).join('；')) : '未更新，按 1:1 折算'}。<br>
-    生成于 ${esc(new Date().toLocaleString('zh-CN'))} · Subs v1.0
+    生成于 ${esc(new Date().toLocaleString('zh-CN'))} · SubTally v1.0
   </div>
 </div></body></html>`
 }

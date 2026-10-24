@@ -10,9 +10,9 @@ SubTally 有两种用法：**微信小程序扫码即用**，或 **Docker 自建
 
 ## 扫码体验
 
-| SubTally 体验版 | 拎包开拍 体验版 | 体验交流群 |
-| --- | --- | --- |
-| <img src="docs/subtally-trial-qr.png" width="220" alt="SubTally 体验版二维码" /> | <img src="docs/lingbao-trial-qr.png" width="220" alt="拎包开拍体验版二维码" /> | <img src="docs/wechat-group-qr.jpg" width="220" alt="体验交流群二维码" /> |
+<p align="center">
+  <img src="docs/subtally-trial-qr.png" width="260" alt="SubTally 体验版二维码" />
+</p>
 
 > 二维码 2026-10-31 前有效。
 
@@ -252,6 +252,14 @@ scripts/
   - `https://icon.horse` —— 取官网图标，只发送你填的域名
 - 页面用 `<meta>` 声明了较严的 CSP：`default-src 'self'`，`connect-src` 仅放行上述两个域，`frame-src` / `object-src` 全禁。
 - 换设备或清浏览器数据前，请在 **设置 → 导出** 存一份 JSON。
+
+## 交流群
+
+<p align="center">
+  <img src="docs/wechat-group-qr.jpg" width="260" alt="体验交流群二维码" />
+</p>
+
+> 群二维码 2026-10-31 前有效。
 
 ## 贡献
 

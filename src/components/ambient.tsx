@@ -142,12 +142,35 @@ export function DialRing({
   )
 }
 
-/** 品牌标记：刻度环 + 字标 */
+/** 小程序同款图标：暖橙底 + 订阅卡片 + 完成徽标 */
+export function BrandIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 144 144" fill="none" className={className} aria-hidden>
+      <defs>
+        <linearGradient id="brand-bg" x1="0" y1="0" x2="0" y2="144" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#D97A38" />
+          <stop offset="1" stopColor="#B4581C" />
+        </linearGradient>
+      </defs>
+      <rect width="144" height="144" rx="31" fill="url(#brand-bg)" />
+      <rect x="30" y="28" width="84" height="88" rx="18" fill="#FFFDF9" />
+      <rect x="43" y="44" width="22" height="7" rx="3.5" fill="#C96A2B" />
+      <rect x="43" y="64" width="52" height="6" rx="3" fill="#EADFD4" />
+      <rect x="43" y="78" width="40" height="6" rx="3" fill="#EADFD4" />
+      <rect x="43" y="92" width="46" height="6" rx="3" fill="#EADFD4" />
+      <circle cx="110" cy="108" r="22" fill="#FFFDF9" />
+      <circle cx="110" cy="108" r="18" fill="#3D8A63" />
+      <path d="M101 108l6 6 12-13" stroke="#fff" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+/** 品牌标记：小程序同款图标 + 字标 */
 export function BrandMark({ className }: { className?: string }) {
   return (
     <span className={cn('inline-flex items-center gap-2', className)}>
-      <DialRing className="h-[19px] w-[19px] text-accent" ticks={8} />
-      <span className="serif text-[17px] tracking-[.04em] text-paper">Subs</span>
+      <BrandIcon className="h-[20px] w-[20px]" />
+      <span className="serif text-[17px] tracking-[.04em] text-paper">SubTally</span>
     </span>
   )
 }

@@ -1,8 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#1a1210"/>
-  <!-- 刻度环：外环 + 一圈刻度 + 一个标出当前位置的点 -->
-  <circle cx="32" cy="34" r="20" stroke="#e8b4b8" stroke-width="2.2" opacity=".9"/>
-  <circle cx="32" cy="34" r="12.5" stroke="#e8b4b8" stroke-width="3"
-          stroke-dasharray="2.6 10.2" stroke-linecap="round" opacity=".95"/>
-  <circle cx="32" cy="14" r="4.2" fill="#e8b4b8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="144" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D97A38"/>
+      <stop offset="1" stop-color="#B4581C"/>
+    </linearGradient>
+  </defs>
+  <rect width="144" height="144" rx="31" fill="url(#bg)"/>
+  <rect x="30" y="28" width="84" height="88" rx="18" fill="#FFFDF9"/>
+  <rect x="43" y="44" width="22" height="7" rx="3.5" fill="#C96A2B"/>
+  <rect x="43" y="64" width="52" height="6" rx="3" fill="#EADFD4"/>
+  <rect x="43" y="78" width="40" height="6" rx="3" fill="#EADFD4"/>
+  <rect x="43" y="92" width="46" height="6" rx="3" fill="#EADFD4"/>
+  <circle cx="110" cy="108" r="22" fill="#FFFDF9"/>
+  <circle cx="110" cy="108" r="18" fill="#3D8A63"/>
+  <path d="M101 108l6 6 12-13" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

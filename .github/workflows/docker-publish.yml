@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: subs
+  IMAGE_NAME: subtally
 
 jobs:
   docker:

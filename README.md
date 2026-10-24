@@ -1,5 +1,9 @@
 # SubTally
 
+<p align="center">
+  <img src="docs/social-preview.png" alt="SubTally" width="900" />
+</p>
+
 **把订阅理清，把选择留给自己。**
 
 本地优先的订阅管理与续费决策应用。记下会员、创作者充电、AI 套餐，之后每月花了多少、花在哪、下一次要付什么，一眼看清；每次续费前它只问你一句「还要不要」，决定留给你自己。
@@ -8,7 +12,7 @@
 
 <p align="center">
   <a href="https://github.com/Caoran1314/SubTally/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Caoran1314/SubTally/actions/workflows/ci.yml/badge.svg" /></a>
-  <a href="https://hub.docker.com/r/caowenrui/subs"><img alt="Docker" src="https://img.shields.io/docker/v/caowenrui/subs?label=docker" /></a>
+  <a href="https://hub.docker.com/r/caowenrui/subtally"><img alt="Docker" src="https://img.shields.io/docker/v/caowenrui/subtally?label=docker" /></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
   <img alt="React" src="https://img.shields.io/badge/React-18-087ea4.svg" />
   <img alt="Vite" src="https://img.shields.io/badge/Vite-6-646cff.svg" />
@@ -71,11 +75,11 @@ npm run typecheck  # 类型检查
 
 ## Docker
 
-镜像地址：`caowenrui/subs`（由 CI 自动构建推送，见下文）
+镜像地址：`caowenrui/subtally`（由 CI 自动构建推送，见下文）
 
 ```bash
 docker run -d --name subs -p 5273:8080 --restart unless-stopped \
-  -e TZ=Asia/Shanghai caowenrui/subs:latest
+  -e TZ=Asia/Shanghai caowenrui/subtally:latest
 ```
 
 打开 `http://<host>:5273`。

@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const OUT = path.resolve(__dirname, '..', 'public', 'presets');
-const PROXY = 'http://10.0.0.5:7890';
+const PROXY = 'http://127.0.0.1:7890';
 
 // 与 catalog.ts 保持一致
 const PRESETS = [

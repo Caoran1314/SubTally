@@ -7,7 +7,7 @@
 没有账号、没有后端、不上传任何记录 —— 数据只存在你的浏览器里。
 
 <p align="center">
-  <a href="https://github.com/Caoran1314/subs/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Caoran1314/subs/actions/workflows/ci.yml/badge.svg" /></a>
+  <a href="https://github.com/Caoran1314/SubTally/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Caoran1314/SubTally/actions/workflows/ci.yml/badge.svg" /></a>
   <a href="https://hub.docker.com/r/caowenrui/subs"><img alt="Docker" src="https://img.shields.io/docker/v/caowenrui/subs?label=docker" /></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
   <img alt="React" src="https://img.shields.io/badge/React-18-087ea4.svg" />
@@ -236,7 +236,7 @@ scripts/
 ## 贡献
 
 ```bash
-git clone https://github.com/Caoran1314/subs.git
+git clone https://github.com/Caoran1314/SubTally.git
 cd subs && npm install
 npm run dev
 ```

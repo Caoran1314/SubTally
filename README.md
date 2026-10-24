@@ -18,11 +18,21 @@ SubTally 有两种用法：**微信小程序扫码即用**，或 **Docker 自建
 
 ## 价格
 
-- **免费版**：最多 5 个订阅，纯本地，不需要账号。
-- **专业版**：12 元/年，激活码解锁无限订阅和多设备端到端加密同步。
+- **Docker 自建网页版**：完全免费，无订阅、无功能限制，数据只存在浏览器。
+- **小程序免费版**：最多 5 个订阅，纯本地，不需要账号。
+- **小程序专业版**：12 元/年，激活码解锁无限订阅和多设备端到端加密同步。
 - **体验版**：2026-10-31 前免费开放；免费额度仍是 5 个订阅，测试无限订阅和同步需要激活码。
 
-网页版没有账号、没有后端，数据只存在浏览器；小程序的同步是可选项，云端只保存密文。
+Docker 网页版没有账号、没有后端，数据只存在浏览器；小程序的同步是可选项，云端只保存密文。
+
+## 小程序界面
+
+<p align="center">
+  <img src="docs/screenshots/mini-home.jpg" width="220" alt="小程序总览" />
+  <img src="docs/screenshots/mini-list.jpg" width="220" alt="订阅列表" />
+  <img src="docs/screenshots/mini-add.jpg" width="220" alt="添加订阅" />
+  <img src="docs/screenshots/mini-settings.jpg" width="220" alt="多设备同步" />
+</p>
 
 <p align="center">
   <a href="https://github.com/Caoran1314/SubTally/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Caoran1314/SubTally/actions/workflows/ci.yml/badge.svg" /></a>
@@ -33,13 +43,17 @@ SubTally 有两种用法：**微信小程序扫码即用**，或 **Docker 自建
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5-3178c6.svg" />
 </p>
 
+## Docker 网页版界面
+
 <p align="center">
-  <img src="docs/screenshots/2-overview.jpg" alt="总览" width="900" />
+  <img src="docs/screenshots/2-overview.jpg" alt="Docker 网页版总览" width="900" />
 </p>
 
 <p align="center">
   <a href="#扫码体验">扫码体验</a> ·
   <a href="#价格">价格</a> ·
+  <a href="#小程序界面">小程序界面</a> ·
+  <a href="#docker-网页版界面">网页版界面</a> ·
   <a href="#功能">功能</a> ·
   <a href="#快速开始">快速开始</a> ·
   <a href="#docker">Docker</a> ·
